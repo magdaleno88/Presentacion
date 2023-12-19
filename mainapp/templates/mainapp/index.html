@@ -1,0 +1,40 @@
+{% extends 'mainapp/layouts/layout.html'%}
+
+
+{% block title %} {{title}} {% endblock%}
+
+{% block content %}
+    <div id="index1" >
+        <div class="index-subtitle row"><h2>Ultimos 4 certificados obtenidos</h2></div>
+        <div id="carouselExampleInterval" class="carousel slide" data-bs-ride="carousel">
+            <div class="carousel-inner">
+                {% for certificate in certificates %}
+                    <div class="carousel-item active" data-bs-interval="10000">
+                        <img src="{{certificate.image.url}}" class="d-block w-100" alt="...">
+                    </div>
+                {% endfor %}
+            </div>
+            <button class="carousel-control-prev" type="button" data-bs-target="#carouselExampleInterval" data-bs-slide="prev">
+            <span class="carousel-control-prev-icon" aria-hidden="true"></span>
+            <span class="visually-hidden">Previous</span>
+            </button>
+            <button class="carousel-control-next" type="button" data-bs-target="#carouselExampleInterval" data-bs-slide="next">
+            <span class="carousel-control-next-icon" aria-hidden="true"></span>
+            <span class="visually-hidden">Next</span>
+            </button>
+        </div>
+        <div id="btn-certificate">
+            <a href={% url 'certifications' %} class="button">Ver todos</a>
+        </div>
+    </div>
+    <div id="index2" class="index row containter containter-fluid">
+            
+    </div>
+    <div id="index3" class="index row containter containter-fluid">
+        
+    </div>
+    <div id="index4" class="index row containter containter-fluid">
+        
+    </div>
+{% endblock%}
+

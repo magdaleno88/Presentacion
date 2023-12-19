@@ -1,0 +1,39 @@
+{% extends 'mainapp/layouts/layout.html'%}
+
+
+{% block title %} 
+    {{title}}
+    {% if user.email %}
+        {{request.user.first_name}}
+    {% endif %}
+{% endblock%}
+
+{% block content %}
+    <div id="comment_container">
+        <div class="row">
+            <div class="col align-self-center">
+                {% if messages %}
+                    {% for message in messages %}
+                        <div class="alert alert-success" role="alert">
+                            {{message}}
+                        </div>
+                    {% endfor %}
+                {% endif %}
+                {% if user.email %}
+                    <div class="django">{{request.user.first_name}}</div>
+                    <li>
+                        <a href={% url 'logout' %} id="btn-register" class="button">Salir</a>
+                    </li>
+                {% else %}
+                    <li>
+                        <a href={% url 'register' %} id="btn-register" class="button">Registrarse</a>
+                    </li>
+                    <li>
+                        <a href={% url 'login' %} id="btn-register" class="button">Acceder</a>
+                    </li>
+                {% endif %}
+                
+            </div>
+        </div>
+    </div>
+{% endblock%}

@@ -1,0 +1,27 @@
+{% extends 'mainapp/layouts/layout.html'%}
+
+
+{% block title %} 
+    {{title}}
+{% endblock%}
+
+{% block content %}
+    <div id="register_box" >
+        <form method="post" class="form" action="">
+            {% if register_form.errors %}
+                    <div class="alert alert-warning" role="alert">
+                        {{register_form.errors}}
+                    </div>
+            {% endif %}
+            {% csrf_token %}
+            {% for field in register_form %}
+                <div class="register_field">
+                    <label for="" class="labels" >{{field.label}}</label>
+                    <br>
+                    {{field}}
+                </div>
+            {% endfor %}
+            <input type="submit" class="button" value="Registrarse" />  
+        </form>
+    </div>
+{% endblock%}

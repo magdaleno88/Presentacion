@@ -1,0 +1,32 @@
+{% extends 'mainapp/layouts/layout.html'%}
+
+
+{% block title %} 
+    {{title}}
+{% endblock%}
+
+{% block content %}
+    <div id="register_box" >
+        <form method="post" class="form" action="">
+            {% csrf_token %}
+            {% if messages %}
+                    {% for message in messages %}
+                        <div class="alert alert-warning" role="alert">
+                            {{message}}
+                        </div>
+                    {% endfor %}
+                {% endif %}
+            <div class="register_field">
+                <label for="username" class="labels">Nombre de usuario:</label>
+                <input type="text" name="username" />
+            </div>
+
+            <div class="register_field">
+                <label for="password" class="labels">Contraseña:</label>
+                <input type="password" name="password" />
+            <div>
+
+            <input id="login" type="submit" class="button" value="Login" />  
+        </form>
+    </div>
+{% endblock%}

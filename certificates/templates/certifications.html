@@ -1,0 +1,80 @@
+{% extends 'mainapp/layouts/layout.html'%}
+
+
+{% block title %} 
+    {{title}}
+{% endblock%}
+
+{% block content %}
+    {% for certificate1, certificate2 in certificates %}
+        <div id="certificates" class="row">
+            <div class="col-md-6">
+                <div class="cards card-left">
+                    <div class="data">
+                        <div class="title" >
+                            <strong> {{certificate1.title}} </strong>
+                        </div>
+                        <div class="content">
+                            {{certificate1.content|safe}}
+                        </div>
+                    </div>
+                    {% if certificate1.image != 'null' and certificate1.image.url|length >= 1 %}
+                        <div class="image card-image">
+                            <img src="{{certificate1.image.url}}" >
+                        </div>
+                    {% endif %}
+            
+                    <div class="categorys">
+                        {% for category in certificate1.categories.all %}
+                            <div class="{{category.badge}}">{{category}}</div>
+                        {% endfor %}
+                    </div>
+                    
+                        
+                    <div class="badge text-bg-primary">
+                        {{certificate1.obtained_at}}
+                    </div>
+                    <div class="companies">
+                        {% for company in certificate1.companies.all %}
+                            <div class="{{company.badge}}">{{company}}</div>
+                        {% endfor %}
+                    </div>
+                </div>
+            </div>
+            <div class="col-md-6">
+                <div class="cards card-right">
+                    <div class="data">
+                        <div class="title" >
+                            <strong> {{certificate2.title}} </strong>
+                        </div>
+                        
+                        <div class="content">
+                            {{certificate2.content|safe}}
+                        </div>
+                    </div>
+
+                    {% if certificate2.image != 'null' and certificate2.image.url|length >= 1 %}
+                        <div class="image card-image">
+                            <img src="{{certificate2.image.url}}" >
+                        </div>
+                    {% endif %}
+
+                    <div class="categorys">
+                        {% for category in certificate2.categories.all %}
+                            <div class="{{category.badge}}">{{category}}</div>
+                        {% endfor %}
+                    </div>
+                    <div class="badge text-bg-primary">
+                        {{certificate2.obtained_at}}
+                    </div>
+                    <div class="companies">
+                        {% for company in certificate2.companies.all %}
+                            <div class="{{company.badge}}">{{company}}</div>
+                        {% endfor %}
+                    </div>
+                </div>
+            </div>
+        </div>   
+
+    {% endfor %} 
+{% endblock%}

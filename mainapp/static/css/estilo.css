@@ -1,0 +1,340 @@
+body{
+    background-color: #2a2d31;
+    color: black;
+}
+div {
+    display: block;
+}
+.title-page{
+    margin-top: 15px;
+    margin-left: 30px;
+    padding-bottom: 15px;
+    color: rgb(168, 168, 168);;
+}
+.bg-body-tertiary{
+    background-color: #1c1e21 !important;
+
+}
+
+nav ul li a{
+    margin-left: 15px;
+}
+
+.button {
+    display: inline-block;
+    padding: 10px 20px;
+    font-size: 16px;
+    text-align: center;
+    text-decoration: none;
+    cursor: pointer;
+    border: none;
+    border-radius: 5px;
+    color: rgb(199, 198, 198);
+    background-color: #1c1e21;
+    transition: background-color 0.3s, color 0.3s, border-color 0.3s;
+}
+  
+  /* Efecto de hover */
+.button:hover {
+    background-color: #eee; /* Cambia el color de fondo al pasar el ratón */
+    color: #333; /* Cambia el color del texto al pasar el ratón */
+ 
+}  
+
+.button:focus {
+    background-color: #eee !important; /* Cambia el color de fondo al pasar el ratón */
+    color: #333; /* Cambia el color del texto al pasar el ratón */
+}  
+
+
+
+header{
+    align-items: center;
+    background-color: #ffffff;
+    border-radius: 10px;
+    margin: 0 0  5px;
+}
+
+ul {
+    list-style: none;
+}
+li {
+    list-style: none;
+}
+
+
+
+#certificates{
+    background-color: #F3F4F0;
+}
+.image{
+    width: 70%;
+    margin-right: 40px;
+    margin-bottom: 15px;
+}
+
+.image img{
+    width: 100%;
+    height: 100%;
+}
+
+
+.cards{
+    display: inline-block;
+    width: 80%;
+    margin-bottom: 50px;
+    margin-top: 30px;
+    color: rgba(0,0,0, 0.87);
+    background: transparent;
+    
+    
+}
+
+.card-left{
+    position: relative;
+    left: 30%;
+}
+
+.card-right{
+    position: relative;
+    left: 30px;
+}
+
+.cards .card-image {
+    display: block;
+    height: 50%;
+    overflow: hidden;
+    border-radius: 12px;
+    box-shadow: 0 16px 38px -12px rgba(0, 0, 0, 0.56), 0 4px 25px 0px rgba(0, 0, 0, 0.12), 0 8px 10px -5px rgba(0, 0, 0, 0.2);
+    
+}
+
+.data{
+    width: 70%;
+    font-family: "Roboto", "Helvetica", "Arial", sans-serif;
+    margin-bottom: 11px;
+
+}
+
+.data .title{
+    text-transform: uppercase;
+    color: #1c3d5a;
+    font-size: 15px;
+}
+
+.data .content{
+    color: #636363;
+    font-size: 13px;
+}
+
+.categorys{
+    height: 20%;
+}
+/* Colores para las insignias */
+
+.badge{
+    margin: 3px;
+    box-shadow: 0 16px 38px -12px rgba(0, 0, 0, 0.56), 0 4px 25px 0px rgba(0, 0, 0, 0.12), 0 8px 10px -5px rgba(0, 0, 0, 0.2);
+
+}
+
+.bootstrap{
+    background-color: purple;
+}
+.jquery{
+    background-color: #0669AD;
+}
+.mysql{
+    background-color: #E59208;
+}
+.django{
+    background-color: #084432;
+}
+.css{
+    background-color: #4DD8F7;
+}
+.sql{
+    background-color: #12274d;
+}
+.tkinter{
+    background-color: #FFE264;
+    color: #080808;
+}
+.flask{
+    background-color: #080808;
+}
+.javascript{
+    background-color: #F7E025;
+    color: #080808;
+}
+.fcc{
+    background-color: #12122A;
+}
+.hr{
+    background-color: #32BE64;
+}
+.udemy{
+    background-color: #C038F5;
+}
+
+/* estilos de index */
+
+.index{
+    height: 200px;
+    
+}
+#index1{
+    background-color: #12274d ;
+}
+#index2{
+    background-color: #E35F9E;
+}
+#index3{
+    background-color: #E678A8;
+}
+#index4{
+    background-color: #E7B8C4;
+}
+
+
+.title-index{
+    color: white;
+}
+.content-index{
+    color: rgb(238, 236, 236);
+}
+.index-subtitle{
+    position: relative;
+    top: 0;
+    right: 0;
+    bottom: 0;
+    left: 0;
+    text-align: center;
+    padding-top: 40px;
+    padding-bottom: 20px;
+    background-color: #ad4a7a;
+    color: white;   
+}
+.carousel{
+    width: 50%;
+    margin: 0 auto;
+}
+.carousel, .carousel-inner > .carousel-item > img {
+    height: 500px;
+    width: 600px;
+    padding-bottom: 40px;
+}
+.carousel{
+    padding-bottom: 20px;
+}
+.carousel-control-prev-icon{
+    background-color:#080808;
+    border-radius: 12px;
+}
+.carousel-control-next-icon{
+    background-color:#080808;
+    border-radius: 12px;
+}
+#btn-certificate {
+    position: relative;
+    top: 0;
+    right: 0;
+    bottom: 0;
+    left: 0;
+    text-align: center;
+    background-color: #ad4a7a;
+}
+
+#btn-certificate a{
+    padding-bottom: 20px;
+    background-color: #ad4a7a;
+}
+
+/* Estilos del registro */
+
+
+#register_box{
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    height: 100vh;
+    margin-top: -150px;
+}
+
+.form {
+    background-color: white;
+    width: 400px;
+    border-radius: 8px;
+    padding: 40px 40px;
+    box-shadow: 0 10px 25px rgba(92, 99, 105, .2);
+}
+
+#register_box form .register_field input[type="text"],
+#register_box form .register_field input[type="email"],
+#register_box form .register_field input[type="password"]{
+    position: absolute;
+    top: 0px;
+    left: 0px;
+    height: 100%;
+    width: 100%;
+    border: 1px solid #2a2d31;
+    border-radius: 7px;
+    font-size: 16px;
+    padding: 0 20px;
+    outline: none;
+    background: none;
+    z-index: 1;
+}
+
+::placeholder {
+    color: transparent;
+  }
+
+.register_field{
+    position: relative;
+    height: 45px;
+    width: 90%;
+    margin-bottom: 27px;
+}
+.labels{
+    position: absolute;
+    top: -22px;
+    left: 15px;
+    padding: 0 4px;
+    background-color: white;
+    color: #2a2d31;
+    font-size: 16px;
+    transition: 0.5s;
+    z-index: 0;
+}
+
+
+#comment_container{
+    background-image: url(https://img.freepik.com/foto-gratis/pico-montana-nevada-majestuosidad-galaxia-estrellada-ia-generativa_188544-9650.jpg?w=1380&t=st=1702926013~exp=1702926613~hmac=6328f5e479e0761aba202c7f8bbf7b672f633e427ae08c266b16652cad23587e);
+    background-repeat: no-repeat;
+    background-attachment: fixed;
+    background-size: 100% 100%;
+    
+}
+
+.alert-warning{
+    margin-bottom: 30px;
+}
+
+.row{
+    border-color: #0669AD;
+    border-style: dashed;
+}
+.col{
+    border-color: #0669AD;
+    border-style: dashed;
+}
+
+#btn-register{
+    opacity: 0.8;
+    color: white;
+}
+
+#login{
+    margin-top: 55px;
+}

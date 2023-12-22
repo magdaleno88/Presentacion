@@ -40,7 +40,8 @@ INSTALLED_APPS = [
     'django.contrib.staticfiles',
     'mainapp',
     'certificates.apps.CertificatesConfig',
-    'comments.apps.CommentsConfig'
+    'comments.apps.CommentsConfig',
+    'experience.apps.ExperienceConfig'
 ]
 
 MIDDLEWARE = [

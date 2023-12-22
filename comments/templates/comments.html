@@ -10,30 +10,52 @@
 
 {% block content %}
     <div id="comment_container">
-        <div class="row">
-            <div class="col align-self-center">
-                {% if messages %}
-                    {% for message in messages %}
-                        <div class="alert alert-success" role="alert">
-                            {{message}}
+        <div class="comment_content">
+            {% if messages %}
+                {% for message in messages %}
+                    <div class="alert alert-success" role="alert">
+                        {{message}}
+                    </div>
+                {% endfor %}
+            {% endif %}
+            {% if user.email %}
+                <div class="comments_top">
+                    <span class="profile estilo_comentario">{{request.user.first_name}} {{request.user.last_name}}</span>
+                    <span id="salir"><a href={% url 'logout' %}  class="btn btn-light estilo_comentario">Salir</a></span>
+                </div>
+                <form id="comentar" class="estilo_comentario" method="post" action="">
+                    {% if comment_form.errors %}
+                            <div class="alert alert-warning" role="alert">
+                                {{comment_form.errors}}
+                            </div>
+                    {% endif %}
+                    {% csrf_token %}
+                    {% for field in comment_form %}
+                        <div class="comment_field estilo_comentario">
+                            <label for="content" class="estilo_comentario">¿Que piensas, {{request.user.first_name}}?</label>
+                            <br>
+                            {{field}}
                         </div>
                     {% endfor %}
-                {% endif %}
-                {% if user.email %}
-                    <div class="django">{{request.user.first_name}}</div>
-                    <li>
-                        <a href={% url 'logout' %} id="btn-register" class="button">Salir</a>
-                    </li>
-                {% else %}
-                    <li>
-                        <a href={% url 'register' %} id="btn-register" class="button">Registrarse</a>
-                    </li>
-                    <li>
-                        <a href={% url 'login' %} id="btn-register" class="button">Acceder</a>
-                    </li>
-                {% endif %}
-                
-            </div>
+                    <input type="submit" class="button" value="Comentar" />  
+                </form>
+            {% else %}
+                <div class="comments_top">
+                    <span><a href={% url 'register' %} id="registrarse"class="btn btn-light estilo_comentario">Registrarse</a></span>
+                    <span><a href={% url 'login' %} id="acceder"  class="btn btn-light estilo_comentario">Acceder</a></span>
+                </div>
+            {% endif %}
+            
+                {% for comentario in comentarios %}
+                    <div class="comment_card card mb-3" style="width: 100%;">
+                        <div class="card-header"> 
+                            {{comentario.user.first_name}} {{comentario.user.last_name}} 
+                            <div class="email">#{{comentario.user.username}} - {{comentario.user.email}}</div>
+                        </div>
+                        
+                        <div class="card-body">{{comentario.content}}</div>
+                    </div>
+                {% endfor %}
         </div>
     </div>
 {% endblock%}

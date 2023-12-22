@@ -1,16 +1,42 @@
 from django.shortcuts import render, redirect
 from django.contrib import messages
 from django.contrib.auth.forms import UserCreationForm
-from .forms import RegisterForm
+from .forms import RegisterForm, CommentForm
 from django.contrib.auth import authenticate, login, logout
+from django.views.decorators.csrf import csrf_protect
+from .models import Comment
+
 
 
 # Create your views here.
+
+
+@csrf_protect
 def Comments(request):
+    
+    comment_form = CommentForm()
+    if request.method == 'POST':
+       comment_form = CommentForm(request.POST)
+
+       if comment_form.is_valid():
+           new_comment = comment_form.save(commit=False)
+           new_comment.user = request.user
+           new_comment.save()
+           messages.success(request, 'comentaste')
+           return redirect('comments')
+    else:
+        comment_form = CommentForm()
+    
+    comments_all = Comment.objects.all()
+        
 
     return render(request, 'comments.html',{
-        'title':'Comentarios'
+        'title':'Comentarios',
+        'comment_form':comment_form,
+        'comentarios': comments_all
     })
+
+
 
 def Register_page(request):
 

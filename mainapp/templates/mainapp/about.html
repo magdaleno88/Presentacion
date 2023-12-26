@@ -4,5 +4,68 @@
 {% block title %} {{title}} {% endblock%}
 
 {% block content %}
-    Sobre mi ajua 
+    <div id="about1">
+        <div class="card" style="width: 28rem;">
+            <div class="card-body">
+              <h5 class="card-title">Presentacion</h5>
+              <p class="card-text">Soy Jesus Magdaleno orozco, tengo 24 años, soy ingeniero biomédico y desarrollador de software mas concretamente web developer full stack.</p>
+            </div>
+        </div>
+    </div>
+    <div id="about2">
+        <div class="card" style="width: 28rem;">
+            <div class="card-body">
+                <h5 class="card-title">Soft skills</h5>
+                <p class="card-text">
+                    <span class="badge jquery">Pensamiento Analitico</span>
+                    <span class="badge bootstrap">Asignacion y seguimiento de tareas</span>
+                    <span class="badge mysql">Comprensión</span>
+                    <span class="badge django">Conceptualización</span>
+                    <span class="badge css">Manejo de conflictos</span>
+                    <span class="badge sql">Coordinación</span>
+                    <span class="badge tkinter">Pensamiento creativo</span>
+                    <span class="badge flask">Involucrar u empoderar nuevas personas</span>
+                    <span class="badge javascript">Solucionar problemas</span>
+                    <span class="badge django">Generar ideas para productos</span>
+                    <span class="badge hr">Atencion genuina</span>
+                    <span class="badge udemy">Mejorar procesos</span>
+                    <span class="badge bootstrap">Influir personas - uno a uno</span>
+                    <span class="badge flask">Influir personas - uno a grupo</span>
+                    <span class="badge text-bg-primary">Habilidades interpersonales</span>
+                    <span class="badge text-bg-success">Procesamiento de informacion</span>
+                </p>
+            </div>
+        </div>
+    </div>
+    <div id="about3">
+        <div class="card" style="width: 28rem;">
+            <div class="card-body">
+                <h5 class="card-title">Hard skills</h5>
+                <p class="card-text">
+                    Mi lenguaje dominante es 
+                    <span class="badge text-bg-success">Python</span> 
+                    usando el framework<span class="badge django">Django</span>
+                    con bases de datos <span class="badge sql">SQL</span>
+                    usando <span class="badge text-bg-primary">HTML</span>, 
+                    <span class="badge css">CSS</span> y 
+                    <span class="badge javascript">javascript</span> para el frontend.
+                </p>
+                <p class="card-text">
+                    Para mas informacion pasar la sección de <a href="{% url 'certifications' %}" class="card-link">Certifiacados <i class="bi bi-patch-check-fill"></i></a>
+                </p>
+                
+            </div>
+        </div>
+    </div>
+    <div id="about4">
+        <div class="card" style="width: 28rem;">
+            <div class="card-body">
+              <h5 class="card-title">Hobbies</h5>
+              <p class="card-text">Mi pasatiempo favorito y lo que mas me representa es la lectura y mi escritor favorito es Brandon Sanderson, tambien me gusta hacer ejercicio, crear contenido para redes sociales, salir de fiesta, entablar platicas largas y profundas, salir a caminar y programar.</p>
+              <a href="https://www.facebook.com/Magdaleno8" class="card-link">Facebook</a>
+              <a href="https://www.instagram.com/magdaleno_88/" class="card-link">Instagram</a>
+              <a href="https://www.linkedin.com/in/jes%C3%BAs-magdaleno-orozco-8b0603240/" class="card-link">Linkedin</a>
+            </div>
+        </div>
+    </div>
 {% endblock%}

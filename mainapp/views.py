@@ -19,10 +19,3 @@ def about(request):
     return render(request, 'mainapp/about.html',{
         'title':'Sobre mi'
     })
-
-
-def experience(request):
-
-    return render(request, 'mainapp/experience.html',{
-        'title':'Experiencia laboral'
-    })

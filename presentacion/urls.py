@@ -24,9 +24,9 @@ urlpatterns = [
     path('', views.index, name="index"),
     path('inicio/', views.index, name="index"),
     path('about/', views.about, name="about"),
-    path('experience/', views.experience, name="experience"),
     path('', include('certificates.urls')),
-    path('', include('comments.urls'))
+    path('', include('comments.urls')),
+    path('', include('experience.urls'))
 ]
 
 # Ruta imagenes

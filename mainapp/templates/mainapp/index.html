@@ -4,9 +4,45 @@
 {% block title %} {{title}} {% endblock%}
 
 {% block content %}
-    <div id="index1" >
+    <div id="index1" class="row">
+        <div class="card border-light  mb-3" style="width: 80%;">
+            <div class="card-header">
+                <h5 class="card-title">Bienvenido a mi pagina web!!</h5>
+            </div>
+            <div class="card-body text-primary">
+              
+              <p class="card-text">Esta pagina web fue diseñada en su totalidad por mi usando Python, Django, HTML, CSS, Bootstrap y SQlite. El objetivo de esta página es exponer informacion mas extensa de mi mismo en el ámbito laboral y personal.
+              </p>
+            </div>
+        </div>
+    </div>
+    <div id="index2" class="index">
+        <div class="card border-primary mb-3" style="max-width: 80%;">
+            <div class="card-header"><h5>Experiencia laboral mas reciente</h5></div>
+            <div class="card-body text-primary">
+              <h6 class="card-title">{{experiencia.title}}</h6>
+              <p class="card-text"> {{experiencia.content}} </p>
+            </div>
+        </div>
+        <div id="btn-comments"><a href={% url 'experience' %} class="btn btn-light estilo_comentario">Ver todos</a></div>
+    </div>
+    <div id="index3" class="index">
+        <div id="index3-title"><h5>Últimos 4 comentarios</h5></div>
+        {% for comentario in comentarios %}
+            <div class="comment_card card mb-3" style="width: 80%;">
+                <div class="card-header"> 
+                    {{comentario.user.first_name}} {{comentario.user.last_name}} 
+                    <div class="email">#{{comentario.user.username}} - {{comentario.user.email}}</div>
+                </div>
+                
+                <div class="card-body">{{comentario.content}}</div>
+            </div>
+        {% endfor %}
+        <div id="btn-comments"><a href={% url 'comments' %} class="btn btn-light estilo_comentario">Ver todos</a></div>
+    </div>
+    <div id="index4" >
         <div class="index-subtitle row"><h2>Ultimos 4 certificados obtenidos</h2></div>
-        <div id="carouselExampleInterval" class="carousel slide" data-bs-ride="carousel">
+        <div id="carouselExampleInterval" class="carousel slide" data-bs-ride="carousel" style="max-width: 95%;">
             <div class="carousel-inner">
                 {% for certificate in certificates %}
                     <div class="carousel-item active" data-bs-interval="10000">
@@ -27,14 +63,7 @@
             <a href={% url 'certifications' %} class="button">Ver todos</a>
         </div>
     </div>
-    <div id="index2" class="index row containter containter-fluid">
-            
-    </div>
-    <div id="index3" class="index row containter containter-fluid">
-        
-    </div>
-    <div id="index4" class="index row containter containter-fluid">
-        
-    </div>
+    
+    
 {% endblock%}
 

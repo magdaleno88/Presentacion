@@ -62,6 +62,11 @@ header{
     border-radius: 10px;
     margin: 0 0  5px;
 }
+footer{
+    color: white;
+    padding-top: 5px;
+    padding-bottom: 5px;
+}
 
 ul {
     list-style: none;
@@ -73,7 +78,11 @@ li {
 
 
 #certificates{
-    background-color: #F3F4F0;
+    background-image: url(https://www.xtrafondos.com/descargar.php?id=3057&resolucion=2560x1440);
+    background-attachment: fixed;
+    background-size: 100% 100%;
+    padding-top: 40px;
+    padding-bottom: 40px;
 }
 .image{
     width: 70%;
@@ -126,13 +135,28 @@ li {
 
 .data .title{
     text-transform: uppercase;
-    color: #1c3d5a;
+    color: black;
     font-size: 15px;
+    background-color: white;
+    opacity: 0.85;
+    border-top-left-radius: 7px;
+    border-top-right-radius: 7px;
+    padding-left: 10px;
+    padding-right: 10px;
+    padding-top: 5px;
 }
 
 .data .content{
-    color: #636363;
+    color: black;
     font-size: 13px;
+    background-color: white;
+    opacity: 0.85;
+    border-bottom-left-radius: 7px;
+    border-bottom-right-radius: 7px;
+    padding-left: 10px;
+    padding-right: 10px;
+    padding-top: 5px;
+    padding-bottom: 5px;
 }
 
 .categorys{
@@ -187,21 +211,68 @@ li {
 
 /* estilos de index */
 
-.index{
-    height: 200px;
+#index1{
+    background-image: url(https://i.pinimg.com/564x/c8/b3/1b/c8b31b2b163492e845a2ab5c89bd5f5f.jpg);
+    background-attachment: fixed;
+    background-size: 100% 100%;
+    padding-top: 60px;
+    padding-bottom: 60px;
     
 }
-#index1{
-    background-color: #12274d ;
+#index1 .card{
+    opacity: 0.9;
 }
 #index2{
-    background-color: #E35F9E;
+    background-image: url(https://i.pinimg.com/564x/3c/a9/93/3ca993ce27d19e6e94ef130bb08975a3.jpg);
+    background-attachment: fixed;
+    padding-top: 60px;
+    background-size: 100% 100%;
+    padding-bottom: 50px;
+}
+#index2 .card{
+    opacity: 0.85;
+    border: none;
 }
 #index3{
-    background-color: #E678A8;
+    background-image: url(https://images.pexels.com/photos/4175070/pexels-photo-4175070.jpeg?auto=compress&cs=tinysrgb&w=1260&h=750&dpr=1);
+    background-attachment: fixed;
+    background-size: 100% 100%;
+    height: auto;
+    padding-top: 60px;
+    padding-bottom: 60px;
+}
+#index3-title{
+    width: 80%;
+    margin:auto;
+    margin-top: 40px;
+    text-align: center;
+    background-color: white;
+    margin-bottom: 20px;
+    opacity: 0.80;
+    border-radius: 6px;
+    font-size: large;
+    padding-top: 8px;
+    padding-bottom: 3px;
+    box-shadow: 0 16px 38px -12px rgba(0, 0, 0, 0.56), 0 4px 25px 0px rgba(0, 0, 0, 0.12), 0 8px 10px -5px rgba(0, 0, 0, 0.2);
+}
+#btn-comments{
+    margin: auto;
+    text-align: center;
+    padding-top: 20px;
+    padding-bottom: 40px;
+}
+
+#index2 .card,
+#index3 .comment_card
+{
+    margin: auto;
 }
 #index4{
-    background-color: #E7B8C4;
+    background-image: url(https://www.xtrafondos.com/descargar.php?id=3057&resolucion=2560x1440);
+    background-attachment: fixed;
+    background-size: 100% 100%;
+    padding-top: 40px;
+    padding-bottom: 40px;
 }
 
 
@@ -220,7 +291,6 @@ li {
     text-align: center;
     padding-top: 40px;
     padding-bottom: 20px;
-    background-color: #ad4a7a;
     color: white;   
 }
 .carousel{
@@ -238,10 +308,12 @@ li {
 .carousel-control-prev-icon{
     background-color:#080808;
     border-radius: 12px;
+    margin-right: 50px;
 }
 .carousel-control-next-icon{
     background-color:#080808;
     border-radius: 12px;
+    margin-left: 50px;
 }
 #btn-certificate {
     position: relative;
@@ -250,12 +322,25 @@ li {
     bottom: 0;
     left: 0;
     text-align: center;
-    background-color: #ad4a7a;
 }
 
 #btn-certificate a{
     padding-bottom: 20px;
-    background-color: #ad4a7a;
+    background-color: #13101C;
+    color:white;
+}
+
+#index1 .card{
+    margin: auto;
+    margin-top: 30px
+}
+
+.card-text, .card-title{
+    color: #080808;
+}
+
+.card{
+    box-shadow: 0 16px 38px -12px rgba(0, 0, 0, 0.56), 0 4px 25px 0px rgba(0, 0, 0, 0.12), 0 8px 10px -5px rgba(0, 0, 0, 0.2);
 }
 
 /* Estilos del registro */
@@ -321,6 +406,7 @@ li {
     width: 100%;
     min-height: 100%;
     height: 100%;
+    padding-top: 50px;
     padding-bottom: 20%;
     margin: auto;
     background-image: url(https://images.pexels.com/photos/4175070/pexels-photo-4175070.jpeg?auto=compress&cs=tinysrgb&w=1260&h=750&dpr=1);
@@ -435,9 +521,11 @@ li {
     box-shadow: 0 16px 38px -12px rgba(0, 0, 0, 0.56), 0 4px 25px 0px rgba(0, 0, 0, 0.12), 0 8px 10px -5px rgba(0, 0, 0, 0.2);
 }
 .experience-container{
-    background-color: white;
-    padding-top: 20px;
-    padding-bottom: 40px;
+    background-image: url(https://i.pinimg.com/564x/3c/a9/93/3ca993ce27d19e6e94ef130bb08975a3.jpg);
+    background-attachment: fixed;
+    background-size: 100% 100%;
+    padding-top: 60px;
+    padding-bottom: 200px;
 }
 
 /* ---------Estilos sobre mi-------- */

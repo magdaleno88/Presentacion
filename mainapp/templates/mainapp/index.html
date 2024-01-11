@@ -5,7 +5,7 @@
 
 {% block content %}
     <div id="index1" class="row">
-        <div class="card border-light  mb-3" style="width: 80%;">
+        <div class="card border-light  mb-3" style="width: 28rem;">
             <div class="card-header">
                 <h5 class="card-title">Bienvenido a mi pagina web!!</h5>
             </div>
@@ -17,7 +17,7 @@
         </div>
     </div>
     <div id="index2" class="index">
-        <div class="card border-primary mb-3" style="max-width: 80%;">
+        <div class="card border-primary mb-3" style="width: 28rem;">
             <div class="card-header"><h5>Experiencia laboral mas reciente</h5></div>
             <div class="card-body text-primary">
               <h6 class="card-title">{{experiencia.title}}</h6>
@@ -29,7 +29,7 @@
     <div id="index3" class="index">
         <div id="index3-title"><h5>Últimos 4 comentarios</h5></div>
         {% for comentario in comentarios %}
-            <div class="comment_card card mb-3" style="width: 80%;">
+            <div class="comment_card card mb-3" style="width: 28rem;">
                 <div class="card-header"> 
                     {{comentario.user.first_name}} {{comentario.user.last_name}} 
                     <div class="email">#{{comentario.user.username}} - {{comentario.user.email}}</div>

@@ -20,17 +20,15 @@ def Comments(request):
            new_comment = comment_form.save(commit=False)
            new_comment.user = request.user
            new_comment.save()
-           messages.success(request, 'Comentaste')
            return redirect('comments')
     else:
         comment_form = CommentForm()
     
     comments_all = Comment.objects.all()
-
     return render(request, 'comments.html',{
         'title':'Comentarios',
         'comment_form':comment_form,
-        'comentarios': comments_all
+        'comentarios': comments_all,
     })
 
 
@@ -73,4 +71,10 @@ def Login_page(request):
 
 def Logout_user(request):
     logout(request)
+    return redirect('comments')
+
+def delete_comment(request, id):
+    comentario = Comment.objects.get(pk=id)
+    comentario.delete()
+
     return redirect('comments')

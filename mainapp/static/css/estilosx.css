@@ -6,6 +6,17 @@ body{
     color: black;
 }
 
+.main-photo{
+    padding-top: 20px;
+    padding-bottom: 20px;
+    text-align: center;
+}
+.main-photo img{
+    border-radius: 50%;
+    height: 200px;
+    width: 200px;
+}
+
 @media screen and (max-width: 900px) {
     .comment_content{
         
@@ -432,7 +443,7 @@ li {
     margin-top: 55px;
 }
 .comment_content{
-    width: 50%;
+    width: 28rem;
     margin: auto;
 }
 .comment_card{
@@ -463,19 +474,14 @@ li {
 #registrarse{
     margin-bottom: 10px;
 }
-.profile{
-    display: block;
-    height: auto;
-    text-align: center;
-    width: 40%;
-    background-color: white;
-    border-radius: 8px;
-    margin-bottom: 5px;
-    color: #080808;
 
-}
 #salir{
-    width: auto;
+    display: inline-block;
+    margin: auto;
+    margin-left: 10px;
+    margin-top: 14px;
+    text-align: center;
+    padding-bottom: 70px;
 }
 #comentar{
     height: 140px;
@@ -483,8 +489,17 @@ li {
     max-width: 60rem;
     margin-bottom: 30px;
 }
+.profile{
+    float: left !important;
+    font-size:small;
+    text-align: center;
 
-
+}
+.name-profile{
+    text-align: justify;
+    position: relative;
+    top: 15px;
+}
 #comentar .button{
     width: 90%;
     margin-left: 5%;

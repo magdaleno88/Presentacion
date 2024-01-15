@@ -19,10 +19,20 @@
                 {% endfor %}
             {% endif %}
             {% if user.email %}
-                <div class="comments_top">
-                    <span class="profile estilo_comentario">{{request.user.first_name}} {{request.user.last_name}}</span>
-                    <span id="salir"><a href={% url 'logout' %}  class="btn btn-light estilo_comentario">Salir</a></span>
+                <div class="profile comment_card card mb-3" style="width: 14rem;">
+                    <div class="card-header"> 
+                        {% if request.user.foto_perfil %}
+                            <img class="foto-perfil" src={{request.user.foto_perfil.url}}>
+                        {% else%}
+                            <img class="foto-perfil" src='/media/fotos_perfil/gatitodef.jpg'>
+                        {% endif %}
+                        <div class="name-profile">{{request.user.nombres}} {{request.user.apellidos}}</div> 
+                        {% if request.user == comentario.user %}
+                            <a href={% url 'borrar' id=comentario.id %}>Eliminar</a>
+                        {% endif %}
+                    </div>
                 </div>
+                <div id="salir"><a href={% url 'logout' %}  class="btn btn-light estilo_comentario">Salir</a></div>
                 <form id="comentar" class="estilo_comentario" method="post" action="" style="width: 28rem;">
                     {% if comment_form.errors %}
                             <div class="alert alert-warning" role="alert">
@@ -56,6 +66,9 @@
                             {% endif %}
                             {{comentario.user.nombres}} {{comentario.user.apellidos}} <span class="fecha">{{comentario.created_at|date:"d/m/Y"}}</span>
                             <div class="email">{{comentario.user.empleo}} - {{comentario.user.email}}</div>
+                            {% if request.user == comentario.user %}
+                                <a href={% url 'borrar' id=comentario.id %}>Eliminar</a>
+                            {% endif %}
                         </div>
                         
                         <div class="card-body">{{comentario.content}}</div>

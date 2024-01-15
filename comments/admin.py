@@ -6,3 +6,6 @@ class CommentAdmin(admin.ModelAdmin):
     readonly_fields = ('created_at',)
 
 admin.site.register(Comment, CommentAdmin)
+admin.site.register(Usuario)
+
+

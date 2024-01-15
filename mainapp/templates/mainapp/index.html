@@ -17,11 +17,19 @@
         </div>
     </div>
     <div id="index2" class="index">
-        <div class="card border-primary mb-3" style="width: 28rem;">
-            <div class="card-header"><h5>Experiencia laboral mas reciente</h5></div>
-            <div class="card-body text-primary">
-              <h6 class="card-title">{{experiencia.title}}</h6>
-              <p class="card-text"> {{experiencia.content}} </p>
+        <div id="index3-title"><h5>Ultima experiencia laboral </h5></div>
+        <div class="experience-card card mb-3" style="width: 28rem;">
+            <div class="row g-0">
+                <div class="col-md-4">
+                    <img src="{{experiencia.image.url}}" class="img-fluid rounded-start" alt="...">
+                </div>
+                <div class="col-md-8">
+                    <div class="card-body">
+                    <h5 class="card-title"> {{experiencia.title}} </h5>
+                    <p class="card-text"> {{experiencia.content}} </p>
+                    <p class="card-text"><small class="text-body-secondary">{{experiencia.start_date}} / {{experiencia.end_date}} </small></p>
+                    </div>
+                </div>
             </div>
         </div>
         <div id="btn-comments"><a href={% url 'experience' %} class="btn btn-light estilo_comentario">Ver todos</a></div>
@@ -29,17 +37,24 @@
     <div id="index3" class="index">
         <div id="index3-title"><h5>Últimos 4 comentarios</h5></div>
         {% for comentario in comentarios %}
-            <div class="comment_card card mb-3" style="width: 28rem;">
-                <div class="card-header"> 
-                    {{comentario.user.first_name}} {{comentario.user.last_name}} 
-                    <div class="email">#{{comentario.user.username}} - {{comentario.user.email}}</div>
-                </div>
-                
-                <div class="card-body">{{comentario.content}}</div>
+        <div class="comment_card card mb-3" style="width: 28rem;">
+            <div class="card-header"> 
+                {% if comentario.user.foto_perfil %}
+                    <img class="foto-perfil" src={{comentario.user.foto_perfil.url}}>
+                {% else%}
+                    <img class="foto-perfil" src='/media/fotos_perfil/gatitodef.jpg'>
+                {% endif %}
+                {{comentario.user.nombres}} {{comentario.user.apellidos}} <span class="fecha">{{comentario.created_at|date:"d/m/Y"}}</span>
+                <div class="email">{{comentario.user.empleo}} - {{comentario.user.email}}</div>
             </div>
+            
+            <div class="card-body">{{comentario.content}}</div>
+        </div>
         {% endfor %}
         <div id="btn-comments"><a href={% url 'comments' %} class="btn btn-light estilo_comentario">Ver todos</a></div>
     </div>
+
+
     <div id="index4" >
         <div class="index-subtitle row"><h2>Ultimos 4 certificados obtenidos</h2></div>
         <div id="carouselExampleInterval" class="carousel slide" data-bs-ride="carousel" style="max-width: 95%;">

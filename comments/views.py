@@ -4,9 +4,7 @@ from django.contrib.auth.forms import UserCreationForm
 from .forms import RegisterForm, CommentForm
 from django.contrib.auth import authenticate, login, logout
 from django.views.decorators.csrf import csrf_protect
-from .models import Comment
-
-
+from .models import *
 
 # Create your views here.
 
@@ -22,13 +20,12 @@ def Comments(request):
            new_comment = comment_form.save(commit=False)
            new_comment.user = request.user
            new_comment.save()
-           messages.success(request, 'comentaste')
+           messages.success(request, 'Comentaste')
            return redirect('comments')
     else:
         comment_form = CommentForm()
     
     comments_all = Comment.objects.all()
-        
 
     return render(request, 'comments.html',{
         'title':'Comentarios',
@@ -42,12 +39,14 @@ def Register_page(request):
 
     register_form = RegisterForm()
     if request.method == "POST":
-        register_form = RegisterForm(request.POST)
+        register_form = RegisterForm(request.POST, request.FILES)
 
         if register_form.is_valid():
-            register_form.save()
+            usuario=register_form.save()    
+            login(request, usuario)
             messages.success(request, 'Te has registrado correctamente')
             return redirect('comments')
+
 
     return render(request,'register_page.html',{
         'title':'Registro',

@@ -26,7 +26,7 @@
             
                     <div class="categorys">
                         {% for category in certificate1.categories.all %}
-                            <div class="{{category.badge}}">{{category}}</div>
+                            <div class="badge {{category.badge}}">{{category}}</div>
                         {% endfor %}
                     </div>
                     
@@ -36,7 +36,7 @@
                     </div>
                     <div class="companies">
                         {% for company in certificate1.companies.all %}
-                            <div class="{{company.badge}}">{{company}}</div>
+                            <div class="badge {{company.badge}}">{{company}}</div>
                         {% endfor %}
                     </div>
                 </div>
@@ -61,7 +61,7 @@
 
                     <div class="categorys">
                         {% for category in certificate2.categories.all %}
-                            <div class="{{category.badge}}">{{category}}</div>
+                            <div class="badge {{category.badge}}">{{category}}</div>
                         {% endfor %}
                     </div>
                     <div class="badge text-bg-primary">
@@ -69,7 +69,7 @@
                     </div>
                     <div class="companies">
                         {% for company in certificate2.companies.all %}
-                            <div class="{{company.badge}}">{{company}}</div>
+                            <div class="badge {{company.badge}}">{{company}}</div>
                         {% endfor %}
                     </div>
                 </div>

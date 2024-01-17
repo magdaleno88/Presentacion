@@ -64,10 +64,10 @@
                             {% else%}
                                 <img class="foto-perfil" src='/media/fotos_perfil/gatitodef.jpg'>
                             {% endif %}
-                            {{comentario.user.nombres}} {{comentario.user.apellidos}} <span class="fecha">{{comentario.created_at|date:"d/m/Y"}}</span>
-                            <div class="email">{{comentario.user.empleo}} - {{comentario.user.email}}</div>
+                            <div class="username">{{comentario.user.username}}</div> <span class="fecha">{{comentario.created_at|date:"d/m/Y"}}</span>
+                            <div class="email">{{comentario.user.nombres}} {{comentario.user.apellidos}} - {{comentario.user.empleo}} </div>
                             {% if request.user == comentario.user %}
-                                <a href={% url 'borrar' id=comentario.id %}>Eliminar</a>
+                                <div class="eliminar"><a href={% url 'borrar' id=comentario.id %}>Eliminar</a></div>
                             {% endif %}
                         </div>
                         
